@@ -15,10 +15,9 @@ class Solution:
             backpack.append(nums[i])
             dfs(i+1)
 
-            while i+1 <len(nums) and nums[i+1]==nums[i]:
+            current = backpack.pop()
+            while i+1 <len(nums) and nums[i+1]==current:
                 i+=1
-            backpack.pop()
-
             dfs(i+1)
         
         dfs(0)
